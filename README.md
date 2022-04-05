@@ -35,3 +35,6 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 **Bundling Process**
 
 ![Bundling Process](./public/images/bundling-process.png)
+
+## Implementing a Caching Layer
+![Implementing a Caching Layer](./public/images/caching.png)
