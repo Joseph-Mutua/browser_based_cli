@@ -27,5 +27,6 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 3. Less complexity - no moving code back and forth
 
 **Local Bundling Solution**
-Use **ESBuild** for both code transpiling and bundling
-![Local Bundling Solution](./public/images/bundling.png.png)
+
+Using **ESBuild** for both code transpiling and bundling
+![Local Bundling Solution](./public/images/bundling.png)
