@@ -30,3 +30,7 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 
 Using **ESBuild** for both code transpiling and bundling
 ![Local Bundling Solution](./public/images/bundling.png)
+
+**Bundling Process**
+
+![Bundling Process](./public/images/bundling-process.png)
