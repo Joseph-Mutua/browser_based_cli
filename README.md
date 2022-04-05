@@ -9,7 +9,7 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 5. Leverages Web Assembly to run a code bundler directly in the Browser
 
 ## App Structure 
-IMAGE
+![App Structure](./public/images/AppStructure.png)
 
 ## Challenges
 1. Code will be provided to PreviewComponent as a String and needs to be executed safely
@@ -28,3 +28,4 @@ IMAGE
 
 **Local Bundling Solution**
 Use **ESBuild** for both code transpiling and bundling
+![Local Bundling Solution](./public/images/bundling.png.png)
