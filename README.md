@@ -28,7 +28,8 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 
 **Local Bundling Solution**
 
-Using **ESBuild** for both code transpiling and bundling
+Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to access the NPM Registry.
+
 ![Local Bundling Solution](./public/images/bundling.png)
 
 **Bundling Process**
