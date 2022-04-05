@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Browser Based CLI
+This is a CLI built on a package-based architecture to launch an interactive development environment for writing and documenting Code
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+1. In-Browser code Transpiling and Processing
+2. Security against Potential security exploits.
+3. Enables safe execution of User-provided code directly in the Browser
+4. Launches and runs a Code Editor directlly in the browser (Same editor to VS Code's)
+5. Leverages Web Assembly to run a code bundler directly in the Browser
 
-## Available Scripts
+## App Structure 
+IMAGE
 
-In the project directory, you can run:
+## Challenges
+1. Code will be provided to PreviewComponent as a String and needs to be executed safely
+2. The code might have advanced JS syntax(e.g JSX) in it that the browser can't execute
+3. The code might have import statements for other JS Files or CSS, which have to be dealt with before executing the code
 
-### `npm start`
+## Remote Vs Local Bundling/Transpiling
+**Remote**
+1. Can cache doownloaded NPM moduless to bundle code fatser
+2. Works better for users with slow devices or limited internet connections.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Local**
+1. Removes an extra request to the API aserver - Faster Code Execution
+2. No need to maintain an API Server
+3. Less complexity - no moving code back and forth
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Local Bundling Solution**
+Use **ESBuild** for both code transpiling and bundling
