@@ -11,7 +11,6 @@ export const fetchPlugin = (inputCode: string) => {
     name: "fetch-plugin",
 
     setup(build: esbuild.PluginBuild) {
-
       build.onLoad({ filter: /.*/ }, async (args: any) => {
         if (args.path === "index.js") {
           return {
@@ -33,9 +32,21 @@ export const fetchPlugin = (inputCode: string) => {
         const { data, request } = await axios.get(args.path);
         // store response in cache
 
+        const fileType = args.path.match(/.css$/) ? "css" : "jsx";
+
+        const escaped = data
+          .replace(/\n/g, "")
+          .replace(/"/g, '\\"')
+          .replace(/'/g, "\\'");
+        const contents =
+          fileType === "css"
+            ? `const style = document.createElemennt("style");
+        style.innerText = '${escaped}'; document.head.appendChild(style)`
+            : data;
+
         const result: esbuild.OnLoadResult = {
           loader: "jsx",
-          contents: data,
+          contents,
           resolveDir: new URL("./", request.responseURL).pathname,
         };
 
