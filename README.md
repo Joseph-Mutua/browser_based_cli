@@ -8,6 +8,13 @@ This is a CLI built on a package-based architecture to launch an interactive dev
 4. Launches and runs a Code Editor directlly in the browser (Same editor to VS Code's)
 5. Leverages Web Assembly to run a code bundler directly in the Browser
 
+## How it Works
+1. User runs the command `cli serve` on the command line
+2. This starts up a server on `localhost:4005`
+3. User can now navigate onto that url and write code into an editor
+4. Code will be bundled in the browser
+5. Code will then be executed in an iframe
+
 ## App Structure 
 ![App Structure](./public/images/AppStructure.png)
 
@@ -43,3 +50,23 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 1. User-provided code might throw errors and cause the program to crash
 2. User-provided code might mutate the DOM, causing the program to crash
 3. A user might accidentally run code provided by another malicious user
+   
+## Implementing a Secure Environment
+**Direct access between the parant and child frames is allowed when:**
+1. The iframe element does not have a 'sandbox' property, or has a 'sandbox="allow-same-origin" property
+2. The parent HTML doc and the frame HTML doc from the same: Domain, Port and Protocol(http vs https)
+
+   All three considerations were solved by executing the user's code in an iframe with direct communication disabled
+
+## The Full Flow
+
+### Example of how the Full Flow is implemented on Codepen
+
+![The full Flow](./public/images/codepen.png)
+
+### Modifications
+1. Eliminate the extra API server- hence whenever the user needs to execute some code, there is no need to make an extra request to obtain the HTML document(which is largely unmodified)
+2. Reload the iframe in a sandbox to eliminate connection between the paraent and child
+    - Users won't be able to use some in-browser features e.g cookies and localStorage in their code.
+
+![The modified full Flow](./public/images/fullflow.png)
