@@ -38,3 +38,8 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
 ## Implementing a Caching Layer
 ![Implementing a Caching Layer](./public/images/caching.png)
+
+## Considerations around Code Execution
+1. User-provided code might throw errors and cause the program to crash
+2. User-provided code might mutate the DOM, causing the program to crash
+3. A user might accidentally run code provided by another malicious user
