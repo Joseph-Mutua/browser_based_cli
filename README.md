@@ -73,3 +73,6 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
 ## Redux Store Design For the Application
 ![Redux Store Design](./public/images/redux.png)
+
+## Extracting State from Text Cell
+![Extracting State From Text Cell](./public/images/redux-state.png)

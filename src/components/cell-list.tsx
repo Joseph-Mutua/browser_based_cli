@@ -3,7 +3,7 @@ import { Cell } from "../state";
 import CellListItem from "./cell-list-item";
 
 const CellList: React.FC = () => {
-  const cells = useTypedSelector(({ cells: {data, order} }) => {
+  const cells = useTypedSelector(( {cells: {data, order} }) => {
     return order.map((id: string | number) => {
       return data[id];
     });
