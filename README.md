@@ -70,3 +70,6 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
     - Users won't be able to use some in-browser features e.g cookies and localStorage in their code.
 
 ![The modified full Flow](./public/images/fullflow.png)
+
+## Redux Store Design For the Application
+![Redux Store Design](./public/images/redux.png)
