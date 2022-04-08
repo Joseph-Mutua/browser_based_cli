@@ -76,3 +76,16 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
 ## Extracting State from Text Cell
 ![Extracting State From Text Cell](./public/images/redux-state.png)
+
+## Connecting Bundles in Redux
+### Process
+1. Take the store and data pieces of state and wire them up with a selector and provide an ordered list of cells to the **cellList** component.
+2. **CellList** then generates some number of **cellListItem** components (CodeCells)
+3. If the code belonging to a cell is unchanged after 750ms, call a bundle cell action with it.
+4. After calling the BundleCell Action Creator, immediately dispatch an action of the type `BUNDLE START` to signal the bundling process has started for a certain cell.
+5. When the bundle is created by the bundle cell action creator, dispatch an action of type `BUNDLE COMPLETE` with the results of the bundle and an possible errors.
+6. Receive both actions in the bundles reducer and use that to update some piece of state and communicate that back to the **Code Cell** component. 
+7. The **Code Cell** component can then communicate the output of the bundle down to the `PreView` component.
+
+### Flow Chart
+![Connecting Bundles in Redux](./public/images/redux-bundles.png)
