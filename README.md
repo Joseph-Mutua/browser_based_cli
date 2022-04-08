@@ -71,7 +71,8 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
 ![The modified full Flow](./public/images/fullflow.png)
 
-## Redux Store Design For the Application
+## Redux Store Design For the Cells
+This is a flow chart explaining the mechanism behind the operation of the `cells` reducer 
 ![Redux Store Design](./public/images/redux.png)
 
 ## Extracting State from Text Cell
