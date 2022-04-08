@@ -6,7 +6,7 @@ import { Cell } from "../cell";
 interface CellsState {
   loading: boolean;
   error: string | null;
-  order: string[];
+  order: string[] ;
   data: {
     [key: string]: Cell;
   };
