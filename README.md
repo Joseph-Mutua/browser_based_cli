@@ -52,7 +52,7 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 3. A user might accidentally run code provided by another malicious user
    
 ## Implementing a Secure Environment
-**Direct access between the parant and child frames is allowed when:**
+**Direct access between the parent and child frames is allowed when:**
 1. The iframe element does not have a 'sandbox' property, or has a 'sandbox="allow-same-origin" property
 2. The parent HTML doc and the frame HTML doc from the same: Domain, Port and Protocol(http vs https)
 
@@ -66,7 +66,7 @@ Using ***ESBuild*** for both code transpiling and bundling and ***unpkg*** to ac
 
 ### Modifications
 1. Eliminate the extra API server- hence whenever the user needs to execute some code, there is no need to make an extra request to obtain the HTML document(which is largely unmodified)
-2. Reload the iframe in a sandbox to eliminate connection between the paraent and child
+2. Reload the iframe in a sandbox to eliminate connection between the parent and child
     - Users won't be able to use some in-browser features e.g cookies and localStorage in their code.
 
 ![The modified full Flow](./public/images/fullflow.png)
