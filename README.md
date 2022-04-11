@@ -90,3 +90,5 @@ This is a flow chart explaining the mechanism behind the operation of the `cells
 
 ### Flow Chart
 ![Connecting Bundles in Redux](./public/images/redux-bundles.png)
+
+## Local App Architecture

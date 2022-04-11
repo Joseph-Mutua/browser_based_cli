@@ -1,12 +1,12 @@
 import { Dispatch } from "redux";
 import { ActionType } from "../action-types";
 import {
-  Action,
   UpdateCellAction,
   DeleteCellAction,
   MoveCellAction,
   InsertCellAfterAction,
   Direction,
+  Action,
 } from "../actions";
 import { CellTypes } from "../cell";
 import bundle from "../../bundler";
@@ -59,6 +59,7 @@ export const createBundle = (cellId: string, input: string) => {
         cellId,
       },
     });
+
     const result = await bundle(input);
 
     dispatch({
