@@ -94,7 +94,7 @@ export const fetchCells = () => {
   };
 };
 
-export const saveCellls = () => {
+export const saveCells = () => {
   return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
     const {
       cells: { data, order },
